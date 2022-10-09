@@ -1,0 +1,27 @@
+import numpy as np
+f = open("D:/test/T/TT/n.txt",'rb')
+i = 0
+num_list = []
+for eachline in f.readlines():
+	lines = eachline.decode().split(' ')
+	i += 1
+	num = int(lines[-1].replace('\r\n',''))
+	num_list.append(num)
+print(num_list)
+key = np.unique(num_list)
+results = {}
+for k in key:
+	print(k)
+	v = np.array(num_list)[num_list == k].size
+	results[k] = v
+print(results)
+for item in results.items():
+	for i in range(len(item)):
+		str1 = item[i]
+		print(str1, end=' ')
+		with open(r'D:/test/T/TT/s/n.txt', 'a') as f:
+			f.write(str(str1))
+			if i>0 and i%2 == 1:
+				f.write('\n')
+			else:
+				f.write(' ')
