@@ -1,0 +1,39 @@
+import re
+f = open("out_test.txt",'rb') #输出读取到的数据
+i = 1
+st0 = 'AA' #匹配对象
+for eachline in f.readlines():
+	lines = eachline.decode().split(' ')
+	i += 1
+	num = lines[-1].replace('\r\n','')
+	str0 = lines[0]
+	sum = str(str0)+' '+str(num)
+	st1 = re.findall(r'\w{2}', str0)  #从第一位两两切分
+	string2 = str0[1:]   #删去第一位
+	st3 = re.findall(r'\w{2}', string2)   #从第二位两两切分
+	st4 = st1 + st3
+	n = 0
+	m = 0
+	for i in range(len(st4)):
+		if st4[i] == st0:
+			n = n + 1
+	print(n)
+	if n == 0:  #输出当统计结果为0时的值
+		outfile = open('D:/test/AA/0/0.txt', 'a')
+		#print(sum)
+		outfile.write(sum)
+		outfile.write('\n')
+		outfile.close()
+	if n == 1:
+		outfile = open('D:/test/AA/1/1.txt','a')
+		outfile.write(sum)
+		outfile.write('\n')
+		outfile.close()
+	if n>= 2:
+		outfile = open('D:/test/AA/n/n.txt', 'a')
+		outfile.write(sum)
+		#print(sum)
+		outfile.write('\n')
+		#print('\n')
+		outfile.close()
+f.close()
