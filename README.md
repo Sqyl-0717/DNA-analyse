@@ -18,3 +18,6 @@ Vase tunicate（玻璃海鞘）	C. intestinalis	NCBI
 Nenatode（线虫）	C. briggsae	NCBI
 Nenatode（线虫）	C. brenneri	NCBI
 Schizosaccharomyces pombe（裂殖酵母）	S. pombe	NCBI
+
+
+accdb文件为步骤2的另一种方法，但是好像搞乱掉了，sorry
